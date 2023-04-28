@@ -1,15 +1,17 @@
 import React, { useState, useEffect, createContext } from "react";
-import ProductCards from "../Components/ProductCards";
+// import { MyContext } from "../App";
+import Categories from "../containers/App/Catagories";
 
 export const ApiContext = createContext([]);
 
 function ProductApi() {
+  
   const [data, setData] = useState([]);
   
-  console.log('data', data)
+  // console.log('data', data)
 
   const fetchData = async () => {
-    const response = await fetch("http://127.0.0.1:8000/api/users");
+    const response = await fetch("http://127.0.0.1:8000/api/product");
     if (!response.ok) {
       throw new Error("Data coud not be fetched!");
     } else {
@@ -26,13 +28,14 @@ function ProductApi() {
       });
   }, []);
 
-  console.log(data, "from api");
+  // console.log(data, "from api");
 
   return (
     <div>
-      <ApiContext.Provider value={data}>
-        <ProductCards/>
-      </ApiContext.Provider>
+       <Categories data={data}/>
+        {/* <MyContext.Provider value={data}>
+          <Categories />
+        </MyContext.Provider> */}
     </div>
   );
 }

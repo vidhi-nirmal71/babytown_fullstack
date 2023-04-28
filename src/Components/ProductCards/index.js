@@ -11,9 +11,10 @@ import { Button, Grid } from "@mui/material";
 import { Colors } from "../../utils/themes";
 
 
-export default function ProductCard({image,name,index,id,price}) {
+export default function ProductCard({image,name,index,id,price,data}) {
   return (
     <>
+  
           <Grid item xs={2} sm={4} md={4} key={index} >
              <Card sx={{ maxWidth: 365, mt: 1 }}>
               <CardMedia

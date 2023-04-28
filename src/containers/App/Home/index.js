@@ -7,6 +7,7 @@ import SwipeableTextMobileStepper from "../../../widgets";
 import Categories from "../Catagories";
 
 function Home() {
+  
   return (
     <>
       <ResponsiveDrawer />

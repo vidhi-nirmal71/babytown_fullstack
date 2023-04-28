@@ -1,12 +1,16 @@
 import { Box, Grid } from "@mui/material";
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet } from "react-router-dom";
+import { MyContext } from "../../../App";
 import ProductCard from "../../../Components/ProductCards";
 import ResponsiveDrawer from "../../../Components/sidebar";
-import { products } from "../../../utils/Constant";
+// import { products } from "../../../utils/Constant";
+
+
 
 function Categories({category}) {
-
+ const data = useContext(MyContext);
+ console.log(data,'data');
   return (
     <>
       <ResponsiveDrawer />
@@ -28,7 +32,7 @@ function Categories({category}) {
               flexWrap: "wrap",
             }}
           >
-            {products.filter((data) => data.category === category ).map((product,index) => (
+            {data.filter((data) => data.category === category ).map((product,index) => (
               <>
                 <ProductCard
                 key={index}
