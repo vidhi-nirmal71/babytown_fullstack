@@ -15,8 +15,8 @@ function Routing() {
     <>
      <Routes>
             <Route path='/' element={<MainLayout />}>
-                <Route index element={<Home category='boy'  pto/>} />
-                <Route path="/home" element={<Home category='boy'/>} />
+                <Route index element={<Home/>} />
+                <Route path="/home" element={<Home/>} />
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/categories" element={<Categories/>} >
                     <Route path="boy" element={<Categories  category='boy'/>} />
